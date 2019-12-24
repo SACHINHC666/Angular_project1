@@ -1,0 +1,52 @@
+<!-- STRUCTURAL DIRECTIVE -->
+<!-- <h1>angular component here</h1>
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let x of languages">{{ x }}</li> -->
+<!-- for(let x of data)  we using *ngFor="let x of lang" instead of for(let x of data) -->
+<!-- </ul> -->
+
+<button class="btn btn-primary mt-2 md-2" (click)="addNewUser()">
+  Add new user
+</button>
+
+<div class="container">
+  <table class="table table-bordered table-hover table-dark mt-2">
+    <tr>
+      <th>photo</th>
+      <th>name</th>
+      <th>age</th>
+      <th>id</th>
+      <th>company</th>
+      <th>education</th>
+      <th>gender</th>
+      <th>salary</th>
+      <th>designation</th>
+      <th>location</th>
+      <th>deleteUser</th>
+    </tr>
+
+    <tr *ngFor="let user of users" class="table-light text-danger">
+      <td>
+        <img
+          class="img-fluid rounded-circle"
+          style="width: 100px; height: 100px;"
+          src="{{ user.u_photo }}"
+        />
+      </td>
+      <td>{{ user.u_name }}</td>
+      <td>{{ user.u_age }}</td>
+      <td>{{ user.u_id }}</td>
+      <td>{{ user.u_company }}</td>
+      <td>{{ user.u_education }}</td>
+      <td>{{ user.u_gender }}</td>
+      <td>{{ user.u_salary }}</td>
+      <td>{{ user.u_designation }}</td>
+      <td>{{ user.u_location }}</td>
+      <td>
+        <button class="btn btn-danger btn-sm" (click)="removeUser(user)">
+          remove
+        </button>
+      </td>
+    </tr>
+  </table>
+</div>
